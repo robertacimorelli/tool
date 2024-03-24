@@ -1,0 +1,10 @@
+USAGE:
+    python main.py <input_file_path> <method>
+
+    Methods:
+        '0': Perform all transformations [aegrbac -> arbac -> vac -> clean_vac]
+        '1': Perform [aegrbac -> arbac] only
+        '2': Perform [arbac -> vac] only
+        '3': Perform [vac -> clean_vac] only
+HELP:
+    python main.py help

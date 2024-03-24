@@ -1,0 +1,26 @@
+AUser
+admin
+
+AR
+Admin
+
+AUA
+(admin,Admin)
+
+RP
+{(CEO_1,{Any_Time}),(CEO_1,{Not_At_office}),(CEO_1,{Emergency_Time}),(RPS_1,{Any_Time}),(RPS_1,{Emergency_Time}),(RPS_1,{Not_At_office}),(ITE_Manager_1,{At_office}),(NC_Engineer_1,{At_office}),(ES_Engineer_1,{At_office}),(IT_1,{At_office}),(HR_Manager,{At_office}),(Adm_empl_1,{At_office}),(Adm_empl_2,{At_office}),(Receptionist_1,{At_office}),(Waiter,{At_office}),(PT,{At_office}),(Gym_client_1,{At_office}),(Chef_1,{At_office}),(Guest_1,{At_office}),(Cleaner_1,{At_office}),(Vigilant_1,{At_office}),(Vigilant_1,{Not_At_office}),(Vigilant_1,{Emergency_Time}),(Vigilant_1,{Any_Time})}
+
+DR
+{Entertainment_Device,Door_Device,Advanced_Device,Safe_Device,Biometric_Device,Biometric_Controlled,Computer_Device,Tablet_Device,Fitness_Device,Fitness_PT_Device,Garage_Device,Wifi_Device,Kitchen_Device,Monitor_Device,Security_Device,Lighting_Device,Cleaning_Device,Work_Device,Common_Device}
+
+RPDRA
+{((CEO_1,{Any_Time}),Entertainment_Device),((CEO_1,{Any_Time}),Safe_Device)}
+
+AssignRPDR
+{assignRPDR(admin,Admin,({(Adm_empl_2,{At_office}),Door_Device∧Lighting_Device∧Wifi_Device,Entertainment_Device})),assignRPDR(admin,Admin,({(Adm_empl_1,{At_office}),Door_Device∧Lighting_Device∧Wifi_Device,Entertainment_Device}))}
+
+RevokeRPDR
+{revokeRPDR(admin,Admin,({(NC_Engineer_1,{At_office}),Entertainment_Device})),revokeRPDR(admin,Admin,({(NC_Engineer_1,{At_office}),Door_Device}))}
+
+QUERY
+{(CEO_1,{Any_Time}), Entertainment_Device}
